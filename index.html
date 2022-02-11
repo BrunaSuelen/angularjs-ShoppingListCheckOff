@@ -33,7 +33,7 @@
           <h2>Already Bought:</h2>
           <ul>
             <li ng-repeat="item in getAlredyBought()">
-              Buy {{item.name}} {{item.quantity}}
+              Bought {{item.name}} {{item.quantity}}
             </li>
           </ul>
           <div class="emptyMessage" ng-if="!getAlredyBought().length">Nothing bought yet.</div>
