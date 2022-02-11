@@ -15,28 +15,28 @@
 
       <div class="row">
         <!-- To Buy List -->
-        <div class="col-md-6" ng-controller="ToBuyController">
+        <div class="col-md-6" ng-controller="ToBuyController as toBuy">
           <h2>To Buy:</h2>
           <ul>
-            <li ng-repeat="item in getToBuy()">
+            <li ng-repeat="item in toBuy.getToBuy()">
               Buy {{item.name}} {{item.quantity}}
-              <button class="btn btn-default" ng-click="buyItem(item)">
+              <button class="btn btn-default" ng-click="toBuy.buyItem(item)">
                 <span class="glyphicon glyphicon-ok"></span> Bought
               </button>
             </li>
           </ul>
-          <div class="emptyMessage" ng-if="!getToBuy().length">Everything is bought!</div>
+          <div class="emptyMessage" ng-if="!toBuy.getToBuy().length">Everything is bought!</div>
         </div>
 
         <!-- Already Bought List -->
-        <div class="col-md-6" ng-controller="AlreadyBoughtController">
+        <div class="col-md-6" ng-controller="AlreadyBoughtController as bought">
           <h2>Already Bought:</h2>
           <ul>
-            <li ng-repeat="item in getAlredyBought()">
+            <li ng-repeat="item in bought.getAlredyBought()">
               Bought {{item.name}} {{item.quantity}}
             </li>
           </ul>
-          <div class="emptyMessage" ng-if="!getAlredyBought().length">Nothing bought yet.</div>
+          <div class="emptyMessage" ng-if="!bought.getAlredyBought().length">Nothing bought yet.</div>
         </div>
       </div>
     </div>
